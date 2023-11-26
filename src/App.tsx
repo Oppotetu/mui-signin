@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css"
+import { AppBar, Box, Button, IconButton, Link, Toolbar } from "@mui/material"
+import MenuIcon from "@mui/icons-material/Menu"
+import { Outlet, Link as RouterLink } from "react-router-dom"
+import Copyright from "./components/copyright"
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+	return (
+		<>
+			<Box
+				sx={{
+					display: "flex",
+					flexDirection: "column",
+					minHeight: "100svh" || "100vh",
+				}}
+			>
+				<AppBar position="static">
+					<Toolbar>
+						<IconButton
+							sx={{ mr: 2 }}
+							size="large"
+							edge="start"
+							color="inherit"
+							aria-label="menu"
+						>
+							<MenuIcon />
+						</IconButton>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+						<Link component={RouterLink} to={"/"} color="inherit">
+							Home
+						</Link>
+
+						<Link
+							component={RouterLink}
+							to={"signin"}
+							color="inherit"
+							ml={"auto"}
+						>
+							Signin
+						</Link>
+					</Toolbar>
+				</AppBar>
+
+				<Outlet />
+
+				<Copyright sx={{ mt: "auto", mb: 4 }} />
+			</Box>
+		</>
+	)
 }
-
-export default App
