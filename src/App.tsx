@@ -1,5 +1,5 @@
 import "./App.css"
-import { AppBar, Box, Button, IconButton, Link, Toolbar } from "@mui/material"
+import { AppBar, Box, IconButton, Link, Toolbar } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import { Outlet, Link as RouterLink } from "react-router-dom"
 import Copyright from "./components/copyright"
