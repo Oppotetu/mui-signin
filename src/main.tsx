@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react"
+import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App.tsx"
 import "./index.css"
@@ -11,6 +11,7 @@ import Signin from "./routes/signin.tsx"
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import Root from "./routes/root.tsx"
 import theme from "./theme.tsx"
+import FolderRoute from "./routes/folderRoute/index.tsx"
 
 const router = createBrowserRouter([
 	{
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
 			{
 				path: "signin",
 				element: <Signin />,
+			},
+			{
+				path: "folderRoute",
+				element: <FolderRoute />,
 			},
 		],
 	},

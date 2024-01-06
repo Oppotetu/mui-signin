@@ -29,6 +29,9 @@ export default function App() {
 						<Link component={RouterLink} to={"/"} color="inherit">
 							Home
 						</Link>
+						<Link component={RouterLink} to={"folderRoute"} color="inherit">
+							Folder
+						</Link>
 
 						<Link
 							component={RouterLink}
